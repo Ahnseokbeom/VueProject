@@ -7,9 +7,8 @@
             <br>
             <img v-bind:src="movie.img" class="img">
           </router-link>
-          <span class="rank">{{movie.id}}</span>
           <div class="detail">
-            <strong class="tit">{{movie.title}}</strong><br>
+            <strong class="title">{{movie.grade}} {{movie.title}}</strong><br>
             <span class="rate">예매율 <span class="num">{{movie.rate}}</span></span><br>
             <span class="release">개봉일 <span class="num">{{movie.release}}</span></span><br>
           </div>
