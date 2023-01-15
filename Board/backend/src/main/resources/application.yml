@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  #   jackson:
+  #     property-naming-strategy: SNAKE_CASE
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    generate-ddl: true
+    defer-datasource-initialization: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/board?useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 4612
