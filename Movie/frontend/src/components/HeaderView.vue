@@ -8,16 +8,13 @@
         </template>
         <v-list>
           <v-list-item link>
-            <v-list-item-title><span><a href="/game" style="color : black; text-decoration: none;">게임</a></span></v-list-item-title>
+            <v-list-item-title><span><a href="/movie" style="color : black; text-decoration: none;">영화</a></span></v-list-item-title>
           </v-list-item>
           <v-list-item link>
             <v-list-item-title><span><a href="/ranking" style="color : black; text-decoration: none;">랭킹</a></span></v-list-item-title>
           </v-list-item>
           <v-list-item link>
-            <v-list-item-title><span><a href="/evaluation" style="color : black; text-decoration: none;">게임 평가</a></span></v-list-item-title>
-          </v-list-item>
-          <v-list-item link>
-            <v-list-item-title><span><a href="/qna" style="color : black; text-decoration: none;">게시판</a></span></v-list-item-title>
+            <v-list-item-title><span><a href="/evaluation" style="color : black; text-decoration: none;">영화 추천</a></span></v-list-item-title>
           </v-list-item>
         </v-list>
           </v-menu>
@@ -26,7 +23,7 @@
         <v-container class="top">
           <v-menu offset-y open-on-hover>
             <template v-slot:activator="{ on, attrs }">
-          <v-btn href="/game" v-bind="attrs" v-on="on" text><h2>게임</h2></v-btn>
+          <v-btn href="/movie" v-bind="attrs" v-on="on" text><h2>영화</h2></v-btn>
         </template>
         <v-list>
           <v-list-item link>
@@ -48,20 +45,11 @@
           <v-btn href="/ranking" text><h2>랭킹</h2></v-btn>
         </v-container>
         <v-container class="top">
-          <v-btn href="/evaluation" text><h2>게임 평가</h2></v-btn>
-        </v-container>
-        <v-container class="top">
-          <v-btn href="/qna" text><h2>게시판</h2></v-btn>
+          <v-btn href="/evaluation" text><h2>영화 추천</h2></v-btn>
         </v-container>
         <v-spacer></v-spacer>
           <v-btn icon href="/search" text><v-icon>mdi-magnify</v-icon></v-btn>
       </v-app-bar>
-          <v-footer class="footer">
-        <v-spacer/> 201736023 안석범
-        <v-btn href="https://github.com/ahnseokbeom" target="_blank" text>
-          <span style="color : white;">github</span>
-          </v-btn>
-      </v-footer>
     </v-app>
   </template>
   <style scoped>
@@ -72,35 +60,6 @@
   img {
       width:300px;
       height: 200px;
-  }
-  table.ranking {
-    font-size: 20px;
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    border-top: 1px solid #ccc;
-    margin: 20px 10px;
-  }
-  table.ranking th{
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    color : white;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: rgb(149, 192, 230);
-  }
-  table.ranking tr {
-    /* text-align: left; */
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-  }
-  .footer {
-    color:white;
-    background: rgb(149, 192, 230);
   }
   h2>a {
     color : white;

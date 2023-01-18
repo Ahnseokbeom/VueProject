@@ -1,20 +1,23 @@
 <template>
   <div>
     <HeaderView />
-    <!-- <div>
-      <Menu/>
-      <Content/>
-    </div> -->
+    <MainView />
+    <FooterView />
+    <!-- <router-view /> -->
   </div>
 </template>
 
 <script>
 import HeaderView from './components/HeaderView.vue';
+import FooterView from './components/FooterView.vue';
+import MainView from './components/MainView.vue';
 
 export default {
   name : 'app',
   components : {
     HeaderView,
+    FooterView,
+    MainView
   }
 }
 </script>
