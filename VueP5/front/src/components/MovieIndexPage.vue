@@ -1,6 +1,7 @@
 <template>
-    <div class="wrap">
-      <h1>5월 마지막주 영화 예매 순위</h1>
+    <div style="margin-top: 5%;">
+      <h1>영화 예매 순위</h1>
+      <table style="margin-left: auto; margin-right: auto;">
       <ul class="movies">
         <li v-for="movie in movies" class="item" :key="movie.id">
           <router-link :to="{ name: 'show', params: { id: movie.id }}">
@@ -9,11 +10,12 @@
           </router-link>
           <div class="detail">
             <strong class="title">{{movie.grade}} {{movie.title}}</strong><br>
-            <span class="rate">예매율 <span class="num">{{movie.rate}}</span></span><br>
+            <span class="rate">예매율 <span class="num">{{movie.rate}}%</span></span><br>
             <span class="release">개봉일 <span class="num">{{movie.release}}</span></span><br>
           </div>
         </li>
       </ul>
+    </table>
     </div>
   </template>
   <script>
@@ -32,6 +34,7 @@
   }
   </script>
   <style scoped>
+
   h1, h2 {
     font-weight: normal;
   }
@@ -41,7 +44,6 @@
   }
   li {
     display: inline-block;
-    margin: 0 10px;
   }
   a {
     color: #42b983;

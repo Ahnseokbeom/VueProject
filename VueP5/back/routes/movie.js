@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var movies = require('../movie.json');
-var detail = require('../detail.json')
 
 router.get('/', function (req, res, next) {
   res.send(movies)
