@@ -160,14 +160,5 @@
 		"rate" : "0",
 		"img" : "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86718/86718_320.jpg",
 		"detail" : "http://www.cgv.co.kr/movies/detail-view/?midx=86718"
-	},
-	{
-		"id" : 19,
-		"title" : "더 메뉴",
-		"grade" : "No.19",
-		"release" : "2022.12.07 개봉",
-		"rate" : "89",
-		"img" : "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86490/86490_320.jpg",
-		"detail" : "http://www.cgv.co.kr/movies/detail-view/?midx=86490"
 	}
 ]

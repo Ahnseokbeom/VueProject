@@ -1,15 +1,8 @@
 <template>
   <v-app>
-    <!-- <v-container fluid> -->
       <moviePage />
-    <!-- </v-container> -->
     <Header />
-    <v-main>
-      
-    </v-main>
-    <footer>
     <Footer />
-  </footer>
   <v-btn class="top_scroll" fab @click="$vuetify.goTo(0,opticons)">
       <v-icon color="primary">mdi-arrow-up-thick</v-icon>
     </v-btn>

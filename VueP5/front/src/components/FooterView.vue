@@ -13,7 +13,6 @@
   @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
   .app{
     font-family: 'Jua', sans-serif;
-    
   }
   .footer {
     width: 100%;

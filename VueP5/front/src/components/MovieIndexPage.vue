@@ -1,8 +1,8 @@
 <template>
-    <div style="margin-top: 5%;">
+  <v-container justify-center>
+    <div style="margin-top: 5%; margin-right: -25%; margin-left: 5%;">
       <h1>영화 예매 순위</h1>
-      <table style="margin-left: auto; margin-right: auto;">
-      <ul class="movies">
+      <ul class="movies" style="padding-right: -600px;">
         <li v-for="movie in movies" class="item" :key="movie.id">
           <router-link :to="{ name: 'show', params: { id: movie.id }}">
             <br>
@@ -15,8 +15,8 @@
           </div>
         </li>
       </ul>
-    </table>
     </div>
+  </v-container>
   </template>
   <script>
   export default {
@@ -34,7 +34,9 @@
   }
   </script>
   <style scoped>
-
+.detail {
+  width: 100%;
+}
   h1, h2 {
     font-weight: normal;
   }
@@ -43,7 +45,7 @@
     padding: 0;
   }
   li {
-    display: inline-block;
+    display :inline-block;
   }
   a {
     color: #42b983;
