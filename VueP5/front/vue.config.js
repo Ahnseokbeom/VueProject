@@ -17,9 +17,7 @@ module.exports = {
       }
     }
   },
-
   outputDir : '../back/public',
-
   transpileDependencies: [
     'vuetify'
   ]
