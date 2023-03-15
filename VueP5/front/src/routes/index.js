@@ -14,7 +14,7 @@ export const router = new Router({
     },
     {
         path : '/:id',
-        name : 'show',
+        name : 'detail',
         component : Show
     }
 ]
