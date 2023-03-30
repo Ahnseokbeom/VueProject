@@ -1,19 +1,19 @@
 <template>
   <Header />
-  <Main />
-  <Footer />
+  <Home />
+  <Footer /> 
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import Main from './components/Main.vue'
+import Home from './pages/Home.vue'
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    Main
+    Home
   }
 }
 </script>
