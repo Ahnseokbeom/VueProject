@@ -1,0 +1,38 @@
+[
+	{
+		"ranking" : 1,
+		"name" : "리그 오브 레전드",
+		"type" : "AOS",
+		"image" : "https://cdn.gamemeca.com/gmdb/g000/26/18/221151(3).jpg",
+		"heart" : 6,
+		"url" : "http://www.leagueoflegends.co.kr/",
+		"en" : "LOL.png"
+	},
+	{
+		"ranking" : 16,
+		"name" : "사이퍼즈",
+		"type" : "AOS",
+		"image" : "https://cdn.gamemeca.com/gmdb/g000/49/31/221151(0).jpg",
+		"heart" : 6,
+		"url" : "http://cyphers.nexon.com/",
+		"en" : "SYP"
+	},
+	{
+		"ranking" : 22,
+		"name" : "도타 2",
+		"type" : "AOS",
+		"image" : "https://cdn.gamemeca.com/gmdb/g000/46/71/221151.jpg",
+		"heart" : 1,
+		"url" : "http://blog.dota2.com/",
+		"en" : "DOTA"
+	},
+	{
+		"ranking" : 43,
+		"name" : "히어로즈 오브 더 스톰",
+		"type" : "AOS",
+		"image" : "https://cdn.gamemeca.com/gmdb/g000/54/58/221151(1).jpg",
+		"heart" : 2,
+		"url" : "http://kr.blizzard.com/ko-kr/games/heroes/",
+		"en" : "HOS"
+	}
+]
