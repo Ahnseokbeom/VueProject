@@ -78,7 +78,7 @@ import { reactive } from 'vue'
 import axios from 'axios'
 import Card from '../components/Card.vue'
 export default{ 
-    name : "test",
+    name : "Home",
     components:{ Card },
     setup(){
       const state = reactive({

@@ -1,23 +1,28 @@
-package com.game.backend.controller;
+package game.backend.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.game.backend.entity.GameEntity;
-import com.game.backend.repository.GameRepository;
-
+import game.backend.entity.Game;
+import game.backend.repository.GameRepository;
 @RestController
 public class GameController {
 	@Autowired
 	GameRepository gameRepository;
 	
 	@GetMapping("/api/game")
-	public List<GameEntity> getGame(){
-		List<GameEntity> items = gameRepository.findAll();
+	public List<Game> getGame(){
+		List<Game> items = gameRepository.findAll();
 		return items;
 	}
+	
+	@GetMapping("api/rank")
+	public List<Game> getRank(){
+		List<Game> rank = gameRepository.findTop10ByOrderByRanking();
+		return rank;
+	}
+
 }

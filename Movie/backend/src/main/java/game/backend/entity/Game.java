@@ -1,4 +1,4 @@
-package com.game.backend.entity;
+package game.backend.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +9,9 @@ import javax.persistence.Table;
 import lombok.Getter;
 
 @Entity
-@Table(name="game")
+@Table(name="Game")
 @Getter
-public class GameEntity {
+public class Game {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ranking;

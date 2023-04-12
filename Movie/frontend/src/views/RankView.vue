@@ -57,25 +57,13 @@
     <v-main>
         <div>  
         </div>
-        <table class="ranking" style="margin-left: auto;margin-right: auto;">
-        <td v-for="item in rankings" v-bind="item.ranking" :key="item.ranking" >
-                <th v-if="item.ranking<=5">{{item.ranking}}</th>
-                <tr v-if="item.ranking<=5">이름 : {{item.name}}</tr>
-                <tr v-if="item.ranking<=5">장르 : {{item.type}}</tr>
-                <tr v-if="item.ranking<=5"><a :href="item.url"><img :src="item.image" /></a></tr>
-                <tr v-if="item.ranking<=5"><v-btn class="mx-2" fab dark small color="pink"><v-icon dark>mdi-heart</v-icon></v-btn>{{item.heart}}</tr>
-        </td>
-        </table>
-        <table class="ranking" style="margin-left: auto;margin-right: auto;">
-        <td v-for="item in rankings" v-bind="item.ranking" :key="item.ranking" >
-                <th v-if="item.ranking>5">{{item.ranking}}</th>
-                <tr v-if="item.ranking>5">이름 : {{item.name}}</tr>
-                <tr v-if="item.ranking>5">장르 : {{item.type}}</tr>
-                <tr v-if="item.ranking>5"><a :href="item.url"><img :src="item.image" /></a></tr>
-                <tr v-if="item.ranking>5"><v-btn class="mx-2" fab dark small color="pink"><v-icon dark>mdi-heart</v-icon></v-btn>{{item.heart}}</tr>
-                
-        </td>
-        </table>
+        <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col" v-for="(item, idx) in state.items" :key="idx">
+              <Card :item="item" />
+      </div>
+  </div>
+</div>
     </v-main>
         <v-footer class="footer">
       <v-spacer/> 201736023 안석범
@@ -86,20 +74,21 @@
   </v-app>
 </template>
 <script>
-import top10 from '../Json/top10.json'
-export default{
-    name : 'top10List',
-    computed:{
-        rank(){
-            return top10.map((items)=>{
-                return items;
-            })
-        }
-    },
-    data(){
-        return {
-            rankings : top10
-        }
+import { reactive } from 'vue'
+import axios from 'axios'
+import Card from '../components/RankCard.vue'
+export default{ 
+    name : "Rank",
+    components : {Card},
+    setup(){
+      const state = reactive({
+          items : []
+      })
+      axios.get("/api/rank").then(({data})=>{
+          state.items = data;
+          console.log(data);
+      })
+      return {state}
     }
 }
 </script>
