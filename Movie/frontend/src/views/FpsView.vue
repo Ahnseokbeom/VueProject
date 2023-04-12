@@ -55,26 +55,16 @@
       </v-container>
     </v-app-bar>
     <v-main>
-        <div>
-            
-        </div>
-       <table class="ranking" style="margin-left: auto;margin-right: auto;">
-        <td v-for="(item,index) in rankings" v-bind="item.ranking" :key="item.ranking" >
-                <th v-if="index+1<=5">{{index+1}}</th>
-                <tr v-if="index+1<=5">이름 : {{item.name}}</tr>
-                <tr v-if="index+1<=5"><a :href="item.url"><img :src="item.image" /></a></tr>
-        </td>
-        </table>
-        <table class="ranking" style="margin-left: auto;margin-right: auto;">
-        <td v-for="(item,index) in rankings" v-bind="item.ranking" :key="item.ranking" >
-                <th v-if="index+1>5 && index+1<=10">{{index+1}}</th>
-                <tr v-if="index+1>5 && index+1<=10" >이름 : {{item.name}}</tr>
-                <tr v-if="index+1>5 && index+1<=10"><a :href="item.url"><img :src="item.image" /></a></tr>
-        </td>
-        </table>
-        <table class="ranking" style="margin-left: auto;margin-right: auto;">
-        <!-- <v-btn href="/fpsdetail">더보기</v-btn> -->
-        </table>
+      <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="float : left">
+          <div class="col" v-for="(item, idx) in state.items" :key="idx">
+            <th>{{ idx+1 }}</th>
+            <tr>이름 : {{ item.name }}</tr>
+            <tr>장르 : {{ item.type }}</tr>
+            <tr><a :href="item.url"><img :src= "item.image" /></a></tr>
+      </div>
+  </div>
+</div>
     </v-main>
         <v-footer class="footer">
       <v-spacer/> 201736023 안석범
@@ -85,24 +75,61 @@
   </v-app>
 </template>
 <script>
-import fps from '../Json/fps.json'
-export default{
-    name : 'fpsList',
-    computed:{
-        rank(){
-            return fps.map((items)=>{
-                return items;
-            })
-        }
-    },
-    data(){
-        return {
-            rankings : fps
-        }
+import { reactive } from 'vue'
+import axios from 'axios'
+export default{ 
+    name : "FPS",
+    setup(){
+      const state = reactive({
+          items : [],
+          detail : []
+      })
+      axios.get("/api/fps").then(({data})=>{
+          state.items = data;
+          console.log(data);
+      }),
+      axios.get("/api/detailFps").then(({data})=>{
+        state.detail = data;
+      })
+      return {state}
     }
 }
 </script>
 <style scoped>
+.card .img{
+  display: inline-block;
+  width: 1000px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+.card .card-body .price{
+  text-decoration: line-through;
+}
+img {
+    border-radius: 3%;
+    width:300px;
+    height: 200px;
+}
+img:hover {
+  filter: brightness(0.5);
+}
+th{
+  border-radius: 3%;
+  width: 15vw;
+  padding: 10px;
+  font-weight: bold;
+  color : white;
+  vertical-align: top;
+  background: rgb(232, 208,177);
+}
+tr {
+  text-align: center;
+  font-size: 110%;
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+}
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 .app{
     font-family: 'Jua', sans-serif;
@@ -112,37 +139,6 @@ span {
 }
 .font{
   font-family: 'Jua', sans-serif;
-}
-img {
-  border-radius: 3%;
-    width:300px;
-    height: 200px;
-}
-img:hover {
-  filter: brightness(0.5);
-}
-table.ranking {
-  font-size: 20px;
-  border-collapse: separate;
-  border-spacing: 1px;
-  text-align: center;
-  line-height: 1.5;
-  margin: 20px 10px;
-}
-table.ranking th{
-  border-radius: 3%;
-  width: 150px;
-  padding: 10px;
-  font-weight: bold;
-  color : white;
-  vertical-align: top;
-  background: rgb(232, 208,177);
-}
-table.ranking tr {
-  /* text-align: left; */
-  width: 350px;
-  padding: 10px;
-  vertical-align: top;
 }
 .footer {
   color:white;

@@ -122,30 +122,6 @@ img {
 img:hover {
   filter: brightness(0.5);
 }
-table.ranking {
-  font-size: 20px;
-  border-collapse: separate;
-  border-spacing: 1px;
-  text-align: center;
-  line-height: 1.5;
-  margin: 20px 10px;
-}
-
-table.ranking th{
-  border-radius: 3%;
-  width: 150px;
-  padding: 10px;
-  font-weight: bold;
-  color : white;
-  vertical-align: top;
-  background: rgb(198, 186, 219);
-}
-table.ranking tr {
-  /* text-align: left; */
-  width: 350px;
-  padding: 10px;
-  vertical-align: top;
-}
 .footer {
   z-index: 2;
   color:white;

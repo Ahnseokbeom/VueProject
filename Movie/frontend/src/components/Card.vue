@@ -39,10 +39,6 @@ img {
 img:hover {
   filter: brightness(0.5);
 }
-/* .title {
-    font-size: 200px;
-    text-align: center;
-} */
 table th{
   border-radius: 3%;
   width: 150px;
