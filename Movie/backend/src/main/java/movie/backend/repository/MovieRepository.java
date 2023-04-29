@@ -7,5 +7,4 @@ import movie.backend.entity.Movie;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Integer>{
-	
 }

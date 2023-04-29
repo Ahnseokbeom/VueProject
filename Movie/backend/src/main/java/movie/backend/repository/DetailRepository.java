@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import movie.backend.entity.Detail;
 @Repository
 public interface DetailRepository extends JpaRepository<Detail, Integer>{
-
+	
 }

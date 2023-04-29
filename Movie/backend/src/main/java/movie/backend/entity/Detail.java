@@ -14,7 +14,6 @@ public class Detail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	private String director;
 	private String actor;
 	private String genre;
