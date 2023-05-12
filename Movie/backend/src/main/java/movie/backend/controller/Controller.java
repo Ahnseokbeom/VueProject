@@ -25,7 +25,7 @@ public class Controller {
 		return movie;
 	}	
 	
-	@GetMapping("/detail")
+	@GetMapping("api/detail")
 	public List<Detail> getDetail(){
 		List<Detail> detail = detailRepository.findAll();
 		return detail;
