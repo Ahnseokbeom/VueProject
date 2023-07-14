@@ -1,11 +1,13 @@
-package game.backend.repository;
+package game.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import game.backend.entity.Game;
+import game.entity.Game;
 
+@Repository
 public interface GameRepository extends JpaRepository<Game, Integer>{
 	List<Game> findTop10ByOrderByRanking();
 	List<Game> findTop10ByType(String type);

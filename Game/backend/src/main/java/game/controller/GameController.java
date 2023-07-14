@@ -1,4 +1,4 @@
-package game.backend.controller;
+package game.controller;
 
 import java.util.List;
 
@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import game.backend.entity.Game;
-import game.backend.repository.GameRepository;
+import game.entity.Game;
+import game.repository.GameRepository;
+
 @RestController
 public class GameController {
 	@Autowired
@@ -70,5 +71,4 @@ public class GameController {
 		List<Game> heart = gameRepository.findAll();
 		return heart;
 	}
-
 }
