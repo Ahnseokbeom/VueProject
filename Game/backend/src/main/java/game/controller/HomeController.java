@@ -7,13 +7,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import game.entity.Board;
 import game.entity.Game;
+import game.repository.BoardRepository;
 import game.repository.GameRepository;
 
 @RestController
-public class GameController {
+public class HomeController {
 	@Autowired
 	GameRepository gameRepository;
+	
+	@Autowired
+	BoardRepository boardRepository;
+	
+	@GetMapping("api/board")
+	public List<Board> getBoard() {
+		List<Board> board = boardRepository.findAll();
+		return board;
+	}
 	
 	@GetMapping("/api/game")
 	public List<Game> getGame(){
