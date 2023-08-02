@@ -6,13 +6,13 @@
         <div class="col-sm-4 py-4">
           <h4 class="text-white">사이트맵</h4>
           <ul class="list-unstyled">
-            <li><router-link class="text-white" to="/">메인 화면</router-link></li>
+            <li><router-link class="text-white" id="side" to="/">메인 화면</router-link></li>
             <li v-if="$store.state.account.id">
-              <router-link class="text-white" to="/orders">주문 내역</router-link>
+              <router-link class="text-white" id="side" to="/orders">주문 내역</router-link>
             </li>
             <li>
-              <router-link class="text-white" to="/login" v-if="!$store.state.account.id">로그인</router-link>
-              <a class="text-white" to="/login" @click="logout()" v-else >로그아웃</a>
+              <router-link class="text-white" id="side" to="/login" v-if="!$store.state.account.id">로그인</router-link>
+              <a class="text-white" id="side" to="/login" @click="logout()" v-else >로그아웃</a>
             </li>
           </ul>
         </div>
@@ -21,10 +21,10 @@
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <router-link to="/" class="navbar-brand d-flex align-items-center">
+      <router-link id="side" to="/" class="navbar-brand d-flex align-items-center">
         <strong>Home</strong>
       </router-link>
-      <router-link to="/cart" class="cart btn">
+      <router-link id="side" to="/cart" class="cart btn">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,5 +62,11 @@ export default {
 header .navbar .cart{
   margin-left: auto;
   color : white;
+}
+#side{
+  text-decoration: none;
+}
+#side:hover{
+  opacity: 80%;
 }
 </style>
